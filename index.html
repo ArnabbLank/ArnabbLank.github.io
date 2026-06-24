@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arnab Sen — Software Engineer</title>
+    <meta name="description" content="Software Engineer building AI-powered developer tools. Agent orchestration, workflow automation, and code generation.">
+    <style>
+        :root {
+            --bg: #0f0f0f;
+            --surface: #1a1a1a;
+            --border: #2a2a2a;
+            --text: #e0e0e0;
+            --muted: #888;
+            --accent: #6c9fff;
+            --accent2: #a78bfa;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 0 1.5rem;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 4rem 0; }
+        
+        /* Header */
+        h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .tagline { color: var(--muted); font-size: 1.1rem; margin-bottom: 1.5rem; }
+        .links { margin-bottom: 3rem; }
+        .links a {
+            color: var(--accent);
+            text-decoration: none;
+            margin-right: 1.5rem;
+            font-size: 0.95rem;
+        }
+        .links a:hover { text-decoration: underline; }
+
+        /* Sections */
+        section { margin-bottom: 3rem; }
+        h2 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* Experience */
+        .role { margin-bottom: 1.5rem; }
+        .role-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+        .role-title { font-weight: 600; font-size: 1.05rem; }
+        .role-date { color: var(--muted); font-size: 0.9rem; }
+        .role-company { color: var(--accent2); font-size: 0.95rem; }
+        .role ul { margin-top: 0.5rem; padding-left: 1.2rem; }
+        .role li { color: var(--text); margin-bottom: 0.3rem; font-size: 0.95rem; }
+        .role li::marker { color: var(--border); }
+
+        /* Projects */
+        .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        @media (max-width: 600px) { .project-grid { grid-template-columns: 1fr; } }
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem;
+            transition: border-color 0.2s;
+        }
+        .project-card:hover { border-color: var(--accent); }
+        .project-card h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+        .project-card p { color: var(--muted); font-size: 0.85rem; margin-bottom: 0.6rem; }
+        .project-card .tech { font-size: 0.8rem; color: var(--accent2); }
+        .project-card a { color: inherit; text-decoration: none; }
+
+        /* Skills */
+        .skills-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .skill-tag {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 0.3rem 0.7rem;
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+
+        /* Education */
+        .edu-item { margin-bottom: 0.8rem; }
+        .edu-item strong { font-size: 0.95rem; }
+        .edu-item span { color: var(--muted); font-size: 0.9rem; }
+
+        /* Footer */
+        footer { color: var(--muted); font-size: 0.85rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Arnab Sen</h1>
+        <p class="tagline">Software Engineer building AI-powered developer tools — agent orchestration, workflow automation, and code generation for enterprise platforms.</p>
+        <div class="links">
+            <a href="mailto:arnabsen72@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/arnab-sen-7020b8200/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/ArnabbLank" target="_blank">GitHub</a>
+        </div>
+
+        <section>
+            <h2>Experience</h2>
+            <div class="role">
+                <div class="role-header">
+                    <span class="role-title">Senior Software Engineer</span>
+                    <span class="role-date">Sep 2025 — Present</span>
+                </div>
+                <div class="role-company">Appian · Chennai</div>
+                <ul>
+                    <li>Built an AI Co-Pilot with agentic orchestration — state machines, SSE streaming, and MCP server integration for natural-language-driven app building.</li>
+                    <li>Shipped full-stack features end-to-end: DB schema design, REST APIs, Redux state management, React micro-frontends, and SAIL UI components.</li>
+                    <li>Delivered 30+ merged PRs across a monorepo — Automation Tab (CRUD + workflow nodes), Freeform UX (progressive screen generation), and object generation pipelines.</li>
+                    <li>Integrated LLM-based reasoning into the platform to auto-generate workflows, expressions, and UI from chat.</li>
+                </ul>
+            </div>
+            <div class="role">
+                <div class="role-header">
+                    <span class="role-title">Associate Data Scientist (AI)</span>
+                    <span class="role-date">Jul 2022 — Aug 2025</span>
+                </div>
+                <div class="role-company">Carelon Global Solutions (Elevance Health) · Bangalore</div>
+                <ul>
+                    <li>Built an OCR→NLP→ML pipeline for medical bill processing — <strong>70% faster</strong> turnaround with improved accuracy.</li>
+                    <li>Designed a multimodal GPT-Vision system for competitor analysis — <strong>80% less manual effort</strong>, claims processing <strong>95% faster</strong>.</li>
+                    <li>Developed a RAG system using Llama-3 + LangChain for internal Python documentation summarization.</li>
+                    <li>Deployed production ML models on AWS with automated retraining pipelines.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <a href="https://github.com/ArnabbLank/EnvCraft" target="_blank">
+                        <h3>EnvCraft</h3>
+                        <p>Type-safe multi-source .env loading for Python. Published package with CLI, validation, and backend support.</p>
+                        <span class="tech">Python · CLI · Package</span>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <a href="https://github.com/ArnabbLank/Google-Form-Extractor" target="_blank">
+                        <h3>Google Form Auto-Filler</h3>
+                        <p>Extract form questions and generate contextual answers via Claude on AWS Bedrock.</p>
+                        <span class="tech">Python · Claude · AWS Bedrock</span>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <a href="https://github.com/ArnabbLank/Predictive-Maintenance-RCA" target="_blank">
+                        <h3>RUL Copilot</h3>
+                        <p>Remaining Useful Life prediction for turbofan engines with uncertainty quantification + agentic copilot.</p>
+                        <span class="tech">PyTorch · CNN-LSTM · Transformer · RAG</span>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <a href="https://github.com/ArnabbLank/LLM-Guide" target="_blank">
+                        <h3>LLM Guide</h3>
+                        <p>Comprehensive guide and code examples for working with large language models in production.</p>
+                        <span class="tech">Python · LLMs · LangChain</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">FastAPI</span>
+                <span class="skill-tag">LangChain</span>
+                <span class="skill-tag">Kubernetes</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">SSE Streaming</span>
+                <span class="skill-tag">State Machines</span>
+                <span class="skill-tag">MCP Servers</span>
+                <span class="skill-tag">RAG</span>
+                <span class="skill-tag">GPT-4o</span>
+                <span class="skill-tag">Redux</span>
+                <span class="skill-tag">Git</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="edu-item">
+                <strong>M.Sc. Data Science</strong> — Chennai Mathematical Institute <span>· 2020–2022</span>
+            </div>
+            <div class="edu-item">
+                <strong>B.Sc. Mathematics</strong> — Presidency University, Kolkata <span>· 2017–2020</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Internships</h2>
+            <div class="role">
+                <div class="role-header">
+                    <span class="role-title">ML Intern</span>
+                    <span class="role-date">Feb — May 2022</span>
+                </div>
+                <div class="role-company">XKDR Forum · Mumbai</div>
+                <ul>
+                    <li>Implemented k-fold cross-validation in Julia for ML packages; created documentation that improved package adoption.</li>
+                </ul>
+            </div>
+            <div class="role">
+                <div class="role-header">
+                    <span class="role-title">Data Science Intern</span>
+                    <span class="role-date">Aug — Sep 2021</span>
+                </div>
+                <div class="role-company">NCAER · Remote</div>
+                <ul>
+                    <li>Built a clustering algorithm for 100k+ caste/subcaste entries, reducing unique categories by 50%.</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p>Built with HTML & CSS. No frameworks needed.</p>
+        </footer>
+    </div>
+</body>
+</html>
