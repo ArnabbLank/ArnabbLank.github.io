@@ -5,23 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arnab Sen — Software Engineer</title>
     <meta name="description" content="Software Engineer building AI-powered developer tools. Agent orchestration, workflow automation, and code generation.">
+    <meta property="og:title" content="Arnab Sen — Software Engineer">
+    <meta property="og:description" content="Building AI-powered developer tools — agent orchestration, workflow automation, and code generation for enterprise platforms.">
+    <meta property="og:image" content="https://arnabblank.github.io/profile.jpg">
+    <meta property="og:url" content="https://arnabblank.github.io">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Arnab Sen — Software Engineer">
+    <meta name="twitter:description" content="Building AI-powered developer tools — agent orchestration, workflow automation, and code generation.">
+    <meta name="twitter:image" content="https://arnabblank.github.io/profile.jpg">
     <link rel="icon" type="image/jpeg" href="logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
     <style>
 :root {
-    --primary: #00d4ff;
-    --primary-rgb: 0, 212, 255;
-    --accent: #7c3aed;
-    --accent-rgb: 124, 58, 237;
+    --primary: #e07a2f;
+    --primary-rgb: 224, 122, 47;
+    --accent: #e07a2f;
+    --accent-rgb: 224, 122, 47;
     --bg: #0a0a0a;
     --surface: #111111;
     --surface-2: #161616;
     --border: #1e1e1e;
     --text: #e8e8e8;
-    --muted: #888;
-    --dim: #555;
+    --muted: #999;
+    --dim: #666;
 
     --space-1: 4px; --space-2: 8px; --space-3: 12px;
     --space-4: 16px; --space-5: 24px; --space-6: 32px;
@@ -62,9 +71,18 @@ body::before {
     transform: translateY(24px);
     transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
 }
-.reveal.visible {
+.reveal-fade {
+    opacity: 0;
+    transition: opacity 0.7s var(--ease-out);
+}
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.96);
+    transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+}
+.reveal.visible, .reveal-fade.visible, .reveal-scale.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
 }
 
 /* Stagger children */
@@ -93,10 +111,7 @@ nav .container {
     font-weight: 700;
     letter-spacing: 3px;
     text-decoration: none;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #fff;
 }
 .nav-links { display: flex; gap: 28px; }
 .nav-links a {
@@ -179,22 +194,11 @@ nav .container {
 
 .hero-content .label {
     display: inline-block;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 11px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
     font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--primary);
-    margin-bottom: var(--space-4);
-    padding-left: 36px;
-    position: relative;
-}
-.hero-content .label::before {
-    content: '';
-    position: absolute; left: 0; top: 50%;
-    transform: translateY(-50%);
-    width: 24px; height: 1.5px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
+    color: var(--muted);
+    margin-bottom: var(--space-3);
 }
 
 .hero-content h1 {
@@ -218,18 +222,19 @@ nav .container {
 
 .metrics {
     display: flex;
-    gap: var(--space-7);
+    flex-direction: column;
+    gap: var(--space-3);
     margin-bottom: var(--space-7);
 }
-.metric h3 {
+.metric {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+}
+.metric .metric-val {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 40px;
-    font-weight: 300;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1.2;
+    font-weight: 600;
+    color: #fff;
 }
 .metric p {
     font-size: 10px;
@@ -253,7 +258,7 @@ nav .container {
 }
 .btn:active { transform: scale(0.97); }
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary), var(--accent));
+    background: var(--primary);
     color: #000;
     box-shadow: 0 4px 16px rgba(var(--primary-rgb), 0.25);
 }
@@ -284,7 +289,7 @@ section { padding: var(--space-9) 0; }
     position: absolute;
     bottom: -8px; left: 0;
     width: 40px; height: 2.5px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
+    background: var(--primary);
     border-radius: 2px;
 }
 
@@ -306,7 +311,7 @@ section { padding: var(--space-9) 0; }
     content: '';
     position: absolute; left: 0; top: 0; bottom: 0;
     width: 1.5px;
-    background: linear-gradient(180deg, transparent 0%, var(--primary) 15%, var(--accent) 85%, transparent 100%);
+    background: linear-gradient(180deg, transparent 0%, var(--primary) 15%, var(--primary) 85%, transparent 100%);
 }
 .tl-item { position: relative; margin-bottom: var(--space-8); }
 .tl-dot {
@@ -390,7 +395,7 @@ section { padding: var(--space-9) 0; }
     content: '';
     position: absolute; top: 0; left: 0; right: 0;
     height: 2.5px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
+    background: var(--primary);
     opacity: 0;
     transition: opacity 0.3s;
 }
@@ -448,11 +453,12 @@ section { padding: var(--space-9) 0; }
 
 /* Footer */
 footer { padding: var(--space-6) 0; border-top: 1px solid var(--border); text-align: center; }
-footer p { font-size: 11px; color: #333; text-transform: uppercase; letter-spacing: 1.5px; }
+footer p { font-size: 11px; color: var(--dim); text-transform: uppercase; letter-spacing: 1.5px; }
 
 /* Responsive */
 @media (max-width: 768px) {
     .hero-grid { grid-template-columns: 1fr; gap: var(--space-7); }
+    .hero-content { order: -1; }
     .hero-image { max-width: 260px; margin: 0 auto; }
     .hero-image img { height: 300px; }
     .metrics { gap: var(--space-5); }
@@ -464,7 +470,7 @@ footer p { font-size: 11px; color: #333; text-transform: uppercase; letter-spaci
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .reveal { opacity: 1; transform: none; transition: none; }
+    .reveal, .reveal-fade, .reveal-scale { opacity: 1; transform: none; transition: none; }
     * { animation: none !important; transition-duration: 0ms !important; }
 }
     </style>
@@ -496,9 +502,9 @@ footer p { font-size: 11px; color: #333; text-transform: uppercase; letter-spaci
                 <h1>Arnab Sen</h1>
                 <p class="tagline">Building AI-powered developer tools — agent orchestration, workflow automation, and code generation for enterprise platforms.</p>
                 <div class="metrics">
-                    <div class="metric"><h3>30+</h3><p>PRs Shipped</p></div>
-                    <div class="metric"><h3>4+</h3><p>Years Exp</p></div>
-                    <div class="metric"><h3>M.Sc.</h3><p>Data Science</p></div>
+                    <div class="metric"><span class="metric-val">30+ PRs</span> shipped at Appian</div>
+                    <div class="metric"><span class="metric-val">4+ years</span> in AI/ML engineering</div>
+                    <div class="metric"><span class="metric-val">M.Sc.</span> Data Science, CMI</div>
                 </div>
                 <div class="hero-ctas">
                     <a href="#contact" class="btn btn-primary">Get in Touch</a>
@@ -512,7 +518,7 @@ footer p { font-size: 11px; color: #333; text-transform: uppercase; letter-spaci
 <section id="about">
     <div class="container">
         <div class="section-header reveal"><h2>About</h2></div>
-        <div class="about-text reveal">
+        <div class="about-text reveal-fade">
             <p class="lead">I build agentic systems that turn natural language into working software.</p>
             <p>At Appian, I design and ship full-stack features for an AI Co-Pilot — from database schema and REST APIs to Redux state and React micro-frontends. My work spans state machine orchestration, SSE streaming pipelines, MCP server integration, and progressive UI generation.</p>
             <p>Previously at Carelon (Elevance Health), I built OCR→NLP→ML pipelines that cut medical bill processing time by 70% and designed multimodal GPT-Vision systems that reduced manual effort by 80%.</p>
@@ -594,25 +600,25 @@ footer p { font-size: 11px; color: #333; text-transform: uppercase; letter-spaci
     <div class="container">
         <div class="section-header reveal"><h2>Projects</h2></div>
         <div class="projects-grid stagger">
-            <a href="https://github.com/ArnabbLank/EnvCraft" target="_blank" class="proj-card reveal" style="--i:0">
+            <a href="https://github.com/ArnabbLank/EnvCraft" target="_blank" class="proj-card reveal-scale" style="--i:0">
                 <div class="proj-top"><h3>EnvCraft</h3><span class="proj-badge">Package</span></div>
                 <p>Type-safe multi-source .env loading for Python with CLI, validation, and pluggable backends.</p>
                 <div class="tech">Python · CLI · Type Safety</div>
                 <span class="arrow">View on GitHub →</span>
             </a>
-            <a href="https://github.com/ArnabbLank/Predictive-Maintenance-RCA" target="_blank" class="proj-card reveal" style="--i:1">
+            <a href="https://github.com/ArnabbLank/Predictive-Maintenance-RCA" target="_blank" class="proj-card reveal-scale" style="--i:1">
                 <div class="proj-top"><h3>RUL Copilot</h3><span class="proj-badge">Research</span></div>
                 <p>Remaining Useful Life prediction for turbofan engines with uncertainty quantification + agentic copilot.</p>
                 <div class="tech">PyTorch · CNN-LSTM · Transformer · RAG</div>
                 <span class="arrow">View on GitHub →</span>
             </a>
-            <a href="https://github.com/ArnabbLank/github-mcp-server" target="_blank" class="proj-card reveal" style="--i:2">
+            <a href="https://github.com/ArnabbLank/github-mcp-server" target="_blank" class="proj-card reveal-scale" style="--i:2">
                 <div class="proj-top"><h3>GitHub MCP Server</h3><span class="proj-badge">MCP</span></div>
                 <p>Minimal MCP server (~140 lines) that connects Claude/Cursor to GitHub. Browse repos, read code, search, and get insights via natural language.</p>
                 <div class="tech">Python · FastMCP · httpx</div>
                 <span class="arrow">View on GitHub →</span>
             </a>
-            <a href="https://github.com/ArnabbLank/LLM-Guide" target="_blank" class="proj-card reveal" style="--i:3">
+            <a href="https://github.com/ArnabbLank/LLM-Guide" target="_blank" class="proj-card reveal-scale" style="--i:3">
                 <div class="proj-top"><h3>LLM Guide</h3><span class="proj-badge">Reference</span></div>
                 <p>Comprehensive guide and code examples for working with large language models in production.</p>
                 <div class="tech">Python · LLMs · LangChain</div>
@@ -671,7 +677,7 @@ footer p { font-size: 11px; color: #333; text-transform: uppercase; letter-spaci
 const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+document.querySelectorAll('.reveal, .reveal-fade, .reveal-scale').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
