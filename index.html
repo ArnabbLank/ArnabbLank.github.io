@@ -295,22 +295,78 @@ h2.display { font-size: clamp(30px, 4vw, 48px); }
 .cs-hero .lead { max-width: none; }
 .cs-hero .taglist { margin-top: 26px; }
 
-.hero-ph {
-    height: 380px; border-radius: var(--r); border: 1px solid var(--line);
-    margin: 44px 0 0; background: var(--paper-2); overflow: hidden;
-    display: grid; place-items: center; position: relative;
+/* Terminal / Visual Blocks */
+.terminal {
+    background: #1e1e2e; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,.12); margin: 44px 0 0;
 }
-.hero-ph::before {
-    content: ""; position: absolute; inset: 0;
-    background-image: radial-gradient(circle at 1px 1px, rgba(28,27,25,.1) 1px, transparent 0);
-    background-size: 18px 18px; opacity: .6;
+.terminal__bar {
+    background: #313244; padding: 12px 16px;
+    display: flex; align-items: center; gap: 8px;
 }
-.hero-ph__tag {
-    position: relative; font-family: var(--mono); font-size: 11px;
-    letter-spacing: .1em; text-transform: uppercase;
-    background: var(--card); border: 1px solid var(--line-2);
-    border-radius: 7px; padding: 6px 11px; color: var(--ink-3);
+.terminal__dot { width: 12px; height: 12px; border-radius: 50%; }
+.terminal__dot--r { background: #f38ba8; }
+.terminal__dot--y { background: #f9e2af; }
+.terminal__dot--g { background: #a6e3a1; }
+.terminal__title {
+    flex: 1; text-align: center; font-size: 12px; color: #6c7086;
+    font-family: "Space Mono", monospace;
 }
+.terminal__body {
+    padding: 20px 24px; font-family: "Space Mono", monospace;
+    font-size: 12.5px; line-height: 1.75; color: #cdd6f4; overflow-x: auto;
+}
+.t-p { color: #a6e3a1; } .t-c { color: #89b4fa; } .t-f { color: #f9e2af; }
+.t-s { color: #f38ba8; } .t-ok { color: #a6e3a1; } .t-i { color: #89dceb; }
+.t-d { color: #6c7086; } .t-w { color: #f9e2af; } .t-n { color: #fab387; }
+
+/* Architecture diagram */
+.arch {
+    background: #1e1e2e; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,.12); margin: 44px 0 0; padding: 32px;
+}
+.arch__title {
+    font-family: "Space Mono", monospace; font-size: 11px;
+    letter-spacing: .12em; text-transform: uppercase; color: #6c7086; margin-bottom: 20px;
+}
+.arch__flow { display: flex; align-items: center; gap: 0; flex-wrap: wrap; justify-content: center; }
+.arch__node {
+    background: #313244; border: 1px solid #45475a; border-radius: 10px;
+    padding: 12px 16px; text-align: center; min-width: 80px;
+}
+.arch__node .ico { font-size: 18px; margin-bottom: 4px; }
+.arch__node .nm { font-family: "Space Mono", monospace; font-size: 11px; font-weight: 600; color: #cdd6f4; }
+.arch__node .sb { font-family: "Space Mono", monospace; font-size: 9px; color: #6c7086; margin-top: 2px; }
+.arch__node--hl { border-color: #89b4fa; background: rgba(137,180,250,.08); }
+.arch__arr { color: #6c7086; font-size: 16px; padding: 0 6px; flex: none; }
+.arch__metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; }
+.arch__m { background: #313244; border-radius: 8px; padding: 12px; border: 1px solid #45475a; }
+.arch__m .v { font-family: "Space Grotesk", sans-serif; font-size: 20px; font-weight: 700; color: #a6e3a1; }
+.arch__m .l { font-family: "Space Mono", monospace; font-size: 10px; color: #6c7086; margin-top: 3px; }
+
+/* Notebook */
+.notebook {
+    background: #fff; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,.06); border: 1px solid var(--line); margin: 44px 0 0;
+}
+.notebook__bar {
+    background: #f8f8f6; padding: 10px 18px; border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; gap: 10px;
+}
+.notebook__name { font-family: "Space Mono", monospace; font-size: 12px; color: var(--ink); font-weight: 600; }
+.nb-cell { padding: 14px 18px; border-bottom: 1px solid #f0ede5; }
+.nb-cell:last-child { border-bottom: 0; }
+.nb-cell--code {
+    background: #fafaf8; font-family: "Space Mono", monospace;
+    font-size: 12px; line-height: 1.7; color: var(--ink);
+}
+.nb-cell--md { font-size: 15px; color: var(--ink); line-height: 1.5; }
+.nb-cell--md h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.nb-cell--out {
+    background: var(--paper); font-family: "Space Mono", monospace;
+    font-size: 11.5px; color: var(--ink-2);
+}
+.nb-in { color: var(--blue); font-weight: 600; margin-right: 6px; }
 
 .detail-layout {
     display: grid; grid-template-columns: 280px 1fr;
@@ -578,7 +634,22 @@ h2.display { font-size: clamp(30px, 4vw, 48px); }
         <p class="lead">Type-safe multi-source environment variable loading for Python applications — with built-in CLI, validation rules, and pluggable backends for .env, AWS SSM, Vault, and more.</p>
         <div class="taglist"><span class="tag">Python</span><span class="tag">CLI</span><span class="tag">Type Safety</span><span class="tag">Open Source</span></div>
     </div>
-    <div class="hero-ph"><span class="hero-ph__tag">Screenshot / Demo</span></div>
+    <div class="terminal">
+        <div class="terminal__bar"><div class="terminal__dot terminal__dot--r"></div><div class="terminal__dot terminal__dot--y"></div><div class="terminal__dot terminal__dot--g"></div><div class="terminal__title">~/projects/my-app — zsh</div></div>
+        <div class="terminal__body">
+<span class="t-p">❯</span> <span class="t-c">envcraft</span> <span class="t-f">init</span><br>
+<span class="t-ok">✓</span> Created .env.template from AppConfig model<br>
+<span class="t-ok">✓</span> Found 12 environment variables<br>
+<span class="t-i">ℹ</span> <span class="t-d">3 required, 9 optional (with defaults)</span><br><br>
+<span class="t-p">❯</span> <span class="t-c">envcraft</span> <span class="t-f">validate</span><br>
+<span class="t-ok">✓</span> DATABASE_URL <span class="t-d">............</span> <span class="t-s">postgresql://...</span><br>
+<span class="t-ok">✓</span> REDIS_HOST <span class="t-d">..............</span> <span class="t-s">localhost</span><br>
+<span class="t-ok">✓</span> API_KEY <span class="t-d">.................</span> <span class="t-s">sk-***redacted***</span><br>
+<span class="t-ok">✓</span> LOG_LEVEL <span class="t-d">...............</span> <span class="t-s">INFO</span> <span class="t-d">(default)</span><br>
+<span class="t-w">⚠</span> SENTRY_DSN <span class="t-d">..............</span> <span class="t-d">not set (optional)</span><br><br>
+<span class="t-ok">✓ All required variables valid.</span> <span class="t-d">Ready to start.</span>
+        </div>
+    </div>
     <div class="detail-layout">
         <aside class="detail-aside">
             <div class="blk"><div class="k">Role</div><div class="v">Creator & Maintainer</div></div>
@@ -626,7 +697,27 @@ h2.display { font-size: clamp(30px, 4vw, 48px); }
         <p class="lead">Remaining Useful Life prediction for turbofan engines using deep learning with uncertainty quantification — paired with an agentic copilot for root cause analysis.</p>
         <div class="taglist"><span class="tag">PyTorch</span><span class="tag">CNN-LSTM</span><span class="tag">Transformer</span><span class="tag">RAG</span><span class="tag">LangChain</span></div>
     </div>
-    <div class="hero-ph"><span class="hero-ph__tag">Architecture Diagram</span></div>
+    <div class="arch">
+        <div class="arch__title">Model Pipeline — Turbofan RUL Prediction</div>
+        <div class="arch__flow">
+            <div class="arch__node"><div class="ico">📡</div><div class="nm">Sensors</div><div class="sb">21 channels</div></div>
+            <div class="arch__arr">→</div>
+            <div class="arch__node"><div class="ico">🔲</div><div class="nm">CNN</div><div class="sb">Features</div></div>
+            <div class="arch__arr">→</div>
+            <div class="arch__node"><div class="ico">🔄</div><div class="nm">LSTM</div><div class="sb">Temporal</div></div>
+            <div class="arch__arr">→</div>
+            <div class="arch__node arch__node--hl"><div class="ico">⚡</div><div class="nm">Transformer</div><div class="sb">Attention</div></div>
+            <div class="arch__arr">→</div>
+            <div class="arch__node"><div class="ico">🎯</div><div class="nm">RUL</div><div class="sb">± Uncertainty</div></div>
+            <div class="arch__arr">→</div>
+            <div class="arch__node"><div class="ico">🤖</div><div class="nm">Agent</div><div class="sb">Root Cause</div></div>
+        </div>
+        <div class="arch__metrics">
+            <div class="arch__m"><div class="v">92%</div><div class="l">Accuracy</div></div>
+            <div class="arch__m"><div class="v">±8.3</div><div class="l">Uncertainty (cycles)</div></div>
+            <div class="arch__m"><div class="v">0.94</div><div class="l">AUC Score</div></div>
+        </div>
+    </div>
     <div class="detail-layout">
         <aside class="detail-aside">
             <div class="blk"><div class="k">Role</div><div class="v">Researcher & Developer</div></div>
@@ -673,7 +764,23 @@ h2.display { font-size: clamp(30px, 4vw, 48px); }
         <p class="lead">A minimal Model Context Protocol server (~140 lines) that gives Claude, Cursor, and other AI assistants the ability to browse repos, read code, and search GitHub via natural language.</p>
         <div class="taglist"><span class="tag">Python</span><span class="tag">FastMCP</span><span class="tag">httpx</span><span class="tag">GitHub API</span></div>
     </div>
-    <div class="hero-ph"><span class="hero-ph__tag">Demo / Terminal Output</span></div>
+    <div class="terminal">
+        <div class="terminal__bar"><div class="terminal__dot terminal__dot--r"></div><div class="terminal__dot terminal__dot--y"></div><div class="terminal__dot terminal__dot--g"></div><div class="terminal__title">MCP Server — Claude Desktop</div></div>
+        <div class="terminal__body">
+<span class="t-d"># Starting GitHub MCP Server...</span><br>
+<span class="t-p">❯</span> <span class="t-c">python</span> <span class="t-s">server.py</span><br>
+<span class="t-i">🔌</span> MCP Server running on stdio<br>
+<span class="t-i">📋</span> Registered tools: <span class="t-n">5</span><br><br>
+<span class="t-d">───── Connected: Claude Desktop ─────</span><br><br>
+<span class="t-w">→</span> <span class="t-f">list_repos</span>(user=<span class="t-s">"ArnabbLank"</span>)<br>
+<span class="t-ok">✓</span> Found <span class="t-n">19</span> repositories<br><br>
+<span class="t-w">→</span> <span class="t-f">read_file</span>(repo=<span class="t-s">"EnvCraft"</span>, path=<span class="t-s">"src/core.py"</span>)<br>
+<span class="t-ok">✓</span> Returned <span class="t-n">142</span> lines<br><br>
+<span class="t-w">→</span> <span class="t-f">search_code</span>(query=<span class="t-s">"validate environment"</span>)<br>
+<span class="t-ok">✓</span> Found <span class="t-n">3</span> matches across <span class="t-n">2</span> files<br><br>
+<span class="t-d">───── Total: 47 requests served ─────</span>
+        </div>
+    </div>
     <div class="detail-layout">
         <aside class="detail-aside">
             <div class="blk"><div class="k">Role</div><div class="v">Creator</div></div>
@@ -720,7 +827,13 @@ h2.display { font-size: clamp(30px, 4vw, 48px); }
         <p class="lead">A comprehensive, code-first guide for working with large language models in production — covering prompting, RAG, fine-tuning, agents, and deployment patterns.</p>
         <div class="taglist"><span class="tag">Python</span><span class="tag">LLMs</span><span class="tag">LangChain</span><span class="tag">OpenAI</span><span class="tag">Education</span></div>
     </div>
-    <div class="hero-ph"><span class="hero-ph__tag">Guide Overview</span></div>
+    <div class="notebook">
+        <div class="notebook__bar"><span>📓</span><span class="notebook__name">03-rag-architecture.ipynb</span></div>
+        <div class="nb-cell nb-cell--md"><h4>RAG Pipeline — Retrieval-Augmented Generation</h4><p>Production RAG pipeline with semantic chunking, hybrid search, and re-ranking.</p></div>
+        <div class="nb-cell nb-cell--code"><span class="nb-in">[1]:</span> <span style="color:#6c7086"># Semantic chunking with overlap</span><br>&nbsp;&nbsp;&nbsp;&nbsp;splitter = RecursiveCharacterTextSplitter(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chunk_size=<span style="color:#fab387">512</span>, chunk_overlap=<span style="color:#fab387">64</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;separators=[<span style="color:#a6e3a1">"\n\n"</span>, <span style="color:#a6e3a1">"\n"</span>, <span style="color:#a6e3a1">"."</span>]<br>&nbsp;&nbsp;&nbsp;&nbsp;)</div>
+        <div class="nb-cell nb-cell--code"><span class="nb-in">[2]:</span> <span style="color:#6c7086"># Hybrid retriever: BM25 + semantic</span><br>&nbsp;&nbsp;&nbsp;&nbsp;retriever = EnsembleRetriever(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;retrievers=[bm25, vector],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;weights=[<span style="color:#fab387">0.3</span>, <span style="color:#fab387">0.7</span>]<br>&nbsp;&nbsp;&nbsp;&nbsp;)</div>
+        <div class="nb-cell nb-cell--out"><span class="nb-in">Out:</span> Retrieved 8 chunks (avg relevance: 0.847) in 23ms</div>
+    </div>
     <div class="detail-layout">
         <aside class="detail-aside">
             <div class="blk"><div class="k">Role</div><div class="v">Author</div></div>
